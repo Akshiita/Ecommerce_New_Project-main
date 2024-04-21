@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- ========================= SECTION MAIN ========================= -->
+<section class="section-intro padding-y-sm">
+  <div class="container">
+    <div class="intro-banner-wrap">
+      <img src="{% static 'images/banners/contact.png' %}" alt="About Us Banner" style="width: 100%; height: auto;">
+    </div>
+  </div>
+  <!-- container //  -->
+</section>
+<!-- ========================= SECTION MAIN END// ========================= -->
+
+<!-- ========================= SECTION CONTACT ========================= -->
+<section class="section-name padding-y-sm">
+  <div class="container">
+    <header class="section-heading text-center mb-4">
+      <!-- <h2 class="section-title">Contact Us</h2> -->
+    </header>
+    <!-- sect-heading -->
+
+    <div class="row">
+      <div class="col-md-6 d-flex align-items-center">
+        <div>
+          <h3 class="contact-heading">Contact Information</h3>
+          <ul class="list-unstyled">
+            <li><strong>Email:</strong> example@example.com</li>
+            <li><strong>Phone:</strong> +1234567890</li>
+            <li><strong>Address:</strong> 123 Main Street, City, Country</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex justify-content-center">
+          <div style="max-width: 500px;">
+            <h4 class="text-center mb-4">Contact Form</h4>
+            {% if success_message %}
+                <div class="alert alert-success" role="alert">
+                    {{ success_message }}
+                </div>
+            {% endif %}
+         <form method="post" style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 5px;">
+    {% csrf_token %}
+    <div style="margin-bottom: 20px;">
+        <label for="name" style="display: block; font-weight: bold;">Name:</label>
+        <input type="text" id="name" name="name" class="form-control" style="width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 5px;" required>
+    </div>
+    <div style="margin-bottom: 20px;">
+        <label for="email" style="display: block; font-weight: bold;">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" style="width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 5px;" required>
+    </div>
+    <div style="margin-bottom: 20px;">
+        <label for="message" style="display: block; font-weight: bold;">Message:</label>
+        <!-- <textarea id="message" name="message" class="form-control" style="width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 5px;" required></textarea> -->
+        <input type="text" id="text" name="message" class="form-control" style="width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 5px;" required>
+    </div>
+    <button type="submit" style="background-color: #3498db; color: white; border: none; padding: 15px 20px; border-radius: 5px; cursor: pointer;">Submit</button>
+</form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- row.// -->
+  </div>
+  <!-- container // -->
+</section>
+<!-- ========================= SECTION CONTACT END// ========================= -->
+
+{% endblock %}

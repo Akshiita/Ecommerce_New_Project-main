@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<!-- ========================= SECTION MAIN ========================= -->
+<section class="section-intro padding-y-sm">
+  <div class="container">
+    <div class="intro-banner-wrap">
+      <img
+        src="{% static '\images\banners\cover.png' %}"
+        class="img-fluid rounded"
+      />
+      {% comment %} Ecommerce\static\images\banners\cover.png {% endcomment %}
+    </div>
+  </div>
+  <!-- container //  -->
+</section>
+<!-- ========================= SECTION MAIN END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name padding-y-sm">
+  <div class="container">
+    <header class="section-heading">
+    <a href="{% url 'store' %}" style="border: 2px solid #fBC0CB; color: #000; padding: 10px 20px; text-decoration: none; display: inline-block; transition: border-color 0.3s, color 0.3s, background-color 0.3s; border-radius: 5px; float: right;">See all</a>
+
+
+      <h3 class="section-title" style="text-align: center;">Popular Products</h3>
+      <br>
+
+    </header>
+    <!-- sect-heading -->
+
+    <div class="row">
+      {% for product in products %}
+      <div class="col-md-3">
+        <div class="card card-product-grid">
+          <a href="{{ product.get_url }}" class="img-wrap">
+            <img src="{{product.images.url}}" />
+          </a>
+          <figcaption class="info-wrap">
+            <a href="{{ product.get_url }}" class="title"
+              >{{product.product_name}}</a
+            >
+            <div class="price mt-1">₹ {{product.price}}</div>
+            <!-- price-wrap.// -->
+          </figcaption>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- col.// -->
+    </div>
+    <!-- row.// -->
+  </div>
+  <!-- container // -->
+</section>
+<!-- ========================= SECTION  END// ========================= -->
+
+{% endblock %}

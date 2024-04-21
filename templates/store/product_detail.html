@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+	.mainImage {	
+		overflow: hidden;
+		margin: 0 auto;
+	}
+
+	.mainImage img {
+		width: 100%;
+		transition: 0.5s all ease-in-out;
+	}
+
+	.mainImage:hover img {
+		transform: scale(1.5);
+	}
+</style>
+<section class="section-content padding-y bg">
+	<div class="container">
+
+		<!-- ============================ COMPONENT 1 ================================= -->
+		<div class="card">
+			<div class="row no-gutters">
+				<aside class="col-md-6">
+					<article class="gallery-wrap">
+						<div class="img-big-wrap mainImage">
+							<center><img src="{{ single_product.images.url }}"></center>
+						</div> <!-- img-big-wrap.// -->
+
+					</article> <!-- gallery-wrap .end// -->
+					<ul class="thumb">
+						<li>
+							<a href="{{ single_product.images.url }}" target="mainImage">
+								<img src="{{ single_product.images.url }}" alt="Product Image"></a>
+
+							{% for i in product_gallery %}
+							<a href="{{i.image.url}}" target="mainImage"><img src="{{i.image.url}}"
+									alt="Product Image"></a>
+							{% endfor %}
+						</li>
+					</ul>
+				</aside>
+				<main class="col-md-6 border-left">
+
+					<form action="{% url 'add_cart' single_product.id %}" method="POST">
+						{% csrf_token %}
+						<article class="content-body">
+
+							<h2 class="title">{{ single_product.product_name }}</h2>
+
+							<div class="mb-3">
+								<var class="price h4">₹ {{single_product.price}}</var>
+							</div>
+
+							<p>{{ single_product.description }}</p>
+
+
+							
+							{% comment %} <div class="row">
+								<div class="item-option-select">
+									{% comment %} <h6>Choose Color</h6> {% endcomment %}
+									{% comment %} <select name="color" class="form-control" required>
+										<option value="" disabled selected>Select</option>
+										{% for i in single_product.variation_set.colors %}
+										<option value="{{ i.variation_value | lower }}">
+											{{ i.variation_value | capfirst }}</option>
+										{% endfor %}
+									</select>  {% endcomment %}
+								{% comment %} </div> {% endcomment %}
+							{% comment %} </div> {% endcomment %}
+							{% comment %} <div class="row">
+								<div class="item-option-select">
+									{% comment %} <h6>Select Size</h6> {% endcomment %}
+									{% comment %} <select name="size" class="form-control" required>
+										<option value="" disabled selected>Select</option>
+										{% for i in single_product.variation_set.size %}
+										<option value="{{ i.variation_value | lower }}">
+											{{ i.variation_value | capfirst }}</option>
+										{% endfor %}
+									</select>
+								</div>
+							</div> {% endcomment %}
+							
+							{% if single_product.stock <= 0 %}
+							<h5 class="text-danger">Out of Stock</h5>
+							{% else %}
+					<div style="text-align: center;">
+    <button type="submit" class="btn btn-primary" style="background-color: #fBC0CB; border-color: #fBC0CB; color: #fff;" onmouseover="this.style.backgroundColor='#000';" onmouseout="this.style.backgroundColor='#fBC0CB';">
+        <span class="text">Add to Cart</span> <i class="fa fa-shopping-cart"></i>
+    </button>
+</div>
+
+
+
+
+							{% endif %}
+						</article> <!-- product-info-aside .// -->
+					</form>
+				</main> <!-- col.// -->
+			</div> <!-- row.// -->
+		</div> <!-- card.// -->
+		<!-- ============================ COMPONENT 1 END .// ================================= -->
+		<br>
+	</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+{% endblock %}

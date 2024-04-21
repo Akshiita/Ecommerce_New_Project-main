@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- ========================= SECTION MAIN ========================= -->
+<section class="section-intro padding-y-sm">
+  <div class="container">
+    <div class="intro-banner-wrap">
+      <img src="{% static 'images/banners/about.png' %}" alt="About Us Banner" class="about-image" style="width: 100%; height: auto;">
+    </div>
+  </div>
+  <!-- container //  -->
+</section>
+<!-- ========================= SECTION MAIN END// ========================= -->
+
+<!-- ========================= SECTION ABOUT ========================= -->
+<section class="section-about padding-y-sm">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Our Mission Section -->
+      <div class="col-md-6 text-center">
+        <h2 style="margin-bottom: 20px; font-family: 'Montserrat', sans-serif; color: #000000;">Our Story</h2>
+        <p style="margin-bottom: 20px; font-size: 14px; font-family: 'Poppins', sans-serif; color: #474747; text-align: justify;" class="about-text">Aliquam erat volutpat. Integer pharetra ultricies iaculis. Sed eget porta augue. Suspendisse consectetur dolor non mauris malesuada, ut elementum purus semper. Mauris dictum mattis orci at porta. Curabitur et turpis vel velit accumsan tempor. Pellentesque sodales sapien suscipit sem ultricies, ac suscipit metus congue. Nulla auctor varius massa facilisis placerat. Curabitur at ante vel velit ultrices convallis. Suspendisse id eros nec leo commodo hendrerit pellentesque ut ante. Etiam purus lorem, consequat tincidunt posuere at, tempus et tortor. Nulla eu lorem tincidunt, lacinia mauris ultricies, luctus sem. Quisque lectus orci, hendrerit vitae urna ac, rhoncus dictum magna. Mauris cursus consectetur nisi, at porta ante. Ut tincidunt ex sed quam pulvinar luctus.</p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="{% static 'images/banners/story.png' %}" alt="Our Story" class="about-image mission-vision-image" style="max-width: 70%; height: auto; opacity: 0.6;" onmouseover="this.style.transform='scale(1.1)'; this.style.opacity='1'" onmouseout="this.style.transform='scale(1)'; this.style.opacity='0.6'" >
+      </div>
+    </div>
+    <!-- Leave some space -->
+    <div style="margin-bottom: 50px;"></div>
+    <div class="row align-items-center">
+      <!-- Our Vision Section -->
+      <div class="col-md-6 text-center">
+        <img src="{% static 'images/banners/ethical.png' %}" alt="Our Ethical" class="about-image mission-vision-image" style="max-width: 70%; height: auto; opacity: 0.6;" onmouseover="this.style.transform='scale(1.1)'; this.style.opacity='1'" onmouseout="this.style.transform='scale(1)'; this.style.opacity='0.6'">
+      </div>
+      <div class="col-md-6 text-center">
+        <h2 style="margin-bottom: 20px; font-family: 'Montserrat', sans-serif; color: #000000;">100% Ethical</h2>
+        <p style="margin-bottom: 20px; font-size: 14px; font-family: 'Poppins', sans-serif; color: #474747; text-align: justify;" class="about-text">Aliquam erat volutpat. Integer pharetra ultricies iaculis. Sed eget porta augue. Suspendisse consectetur dolor non mauris malesuada, ut elementum purus semper. Mauris dictum mattis orci at porta. Curabitur et turpis vel velit accumsan tempor. Pellentesque sodales sapien suscipit sem ultricies, ac suscipit metus congue. Nulla auctor varius massa facilisis placerat. Curabitur at ante vel velit ultrices convallis. Suspendisse id eros nec leo commodo hendrerit pellentesque ut ante. Etiam purus lorem, consequat tincidunt posuere at, tempus et tortor. Nulla eu lorem tincidunt, lacinia mauris ultricies, luctus sem. Quisque lectus orci, hendrerit vitae urna ac, rhoncus dictum magna. Mauris cursus consectetur nisi, at porta ante. Ut tincidunt ex sed quam pulvinar luctus.</p>
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+  <!-- container // -->
+</section>
+<!-- ========================= SECTION ABOUT END// ========================= -->
+
+{% endblock%}

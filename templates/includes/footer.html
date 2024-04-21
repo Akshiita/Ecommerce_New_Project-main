@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Footer Example</title>
+	<style>
+		footer {
+			background-color:#eec0c8;
+			color: #333;
+			padding: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.footer-links a {
+			color: #333;
+			text-decoration: none;
+			margin-left: 80px;
+			display: block;
+			margin-bottom: 5px;
+		}
+		.contact-info {
+			margin-bottom: 10px;
+			margin-left: 80px;
+		}
+		.contact-info a {
+			color: #333;
+			text-decoration: none;
+			margin-bottom: 5px;
+			display: block;
+		}
+		.newsletter-signup {
+			flex-basis: 30%;
+		}
+		.newsletter-signup label {
+			display: block;
+			margin-bottom: 5px;
+		}
+		.newsletter-signup input[type="email"] {
+			width: 100%;
+			padding: 5px;
+			margin-bottom: 5px;
+		}
+		.newsletter-signup input[type="submit"] {
+			 background-color:#17B169;
+    color: #fff;
+			padding: 5px 10px;
+			border: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<footer>
+	
+	<div class="contact-info">
+    <a href="mailto:info@my-domain.com">info@my-domain.com</a><br>
+    123, New Delhi Street<br>
+    New Delhi, DL 110001<br>
+    Tel: 987-654-3210
+</div>
+
+			<div class="footer-links">
+			
+			<a href="{% url 'store' %}">Shop</a>
+<a href="{% url 'about' %}">About</a>
+<a href="{% url 'contact' %}">Contact</a>
+<a href="{% url 'faq' %}">FAQ</a>
+		</div>
+		<div class="newsletter-signup">
+			<form>
+				<label for="email">Sign Up, Bloom Brighter: Buy Flowers Today!.</label><br>
+				<input type="email" id="email" name="email" placeholder="Email Address" required><br>
+				<input type="submit" value="Subscribe Now">
+			</form>
+		</div>
+	</footer>
+</body>
+</html>

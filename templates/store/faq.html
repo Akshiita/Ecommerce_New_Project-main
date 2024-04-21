@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- ========================= SECTION MAIN ========================= -->
+<section class="section-intro padding-y-sm">
+  <div class="container">
+    <div class="intro-banner-wrap">
+      <img src="{% static 'images/banners/faqs.png' %}" alt="FAQ Banner" style="width: 100%; height: auto;">
+    </div>
+  </div>
+  <!-- container //  -->
+</section>
+<!-- ========================= SECTION MAIN END// ========================= -->
+
+<!-- ========================= SECTION FAQS ========================= -->
+<section class="section-faqs padding-y-sm">
+  <div class="container">
+    <div class="accordion" id="faqAccordion">
+      <!-- FAQ 1 -->
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0 d-flex justify-content-between align-items-center">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <span style="color: black;">What payment methods do you accept?</span>
+            </button>
+            <span class="toggle-icon">+</span>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqAccordion">
+          <div class="card-body">
+            We accept Visa, MasterCard, American Express, PayPal, and bank transfers.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0 d-flex justify-content-between align-items-center">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <span style="color: black;">Do you offer international shipping?</span>
+            </button>
+            <span class="toggle-icon">+</span>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+          <div class="card-body">
+            Yes, we offer international shipping to most countries. Please check our shipping policy for more details.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0 d-flex justify-content-between align-items-center">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <span style="color: black;">How can I track my order?</span>
+            </button>
+            <span class="toggle-icon">+</span>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+          <div class="card-body">
+            Once your order has been shipped, you will receive a tracking number via email. You can use this tracking number to track your order on our website.
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more FAQs as needed -->
+
+    </div>
+    <!-- accordion .// -->
+  </div>
+  <!-- container // -->
+</section>
+<!-- ========================= SECTION FAQS END// ========================= -->
+
+<!-- ========================= TESTIMONIAL SLIDER ========================= -->
+{% comment %}  {% endcomment %}
+<!-- ========================= TESTIMONIAL SLIDER END// ========================= -->
+
+<script>
+  document.querySelectorAll('.card-header').forEach(function(cardHeader) {
+    cardHeader.addEventListener('click', function() {
+      const toggleIcon = this.querySelector('.toggle-icon');
+      if (toggleIcon.textContent === '+') {
+        toggleIcon.textContent = '-';
+      } else {
+        toggleIcon.textContent = '+';
+      }
+    });
+  });
+</script>
+
+{% endblock %}
